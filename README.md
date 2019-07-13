@@ -18,13 +18,13 @@ Through one refreshingly easy and integrated platform, we automate and simplify 
 - Postgres
 
 ## Quick start
-See how have the api running on your machine locally.
+See how to have the api running on your machine locally.
 
 ## Deployment
-See how how to deploy to heroku.
+See the app deployed on Heroku
 
 ## Changes
-See [CHANGELOG.md]() for detailed list of changes between releases.
+See [CHANGELOG.md](https://github.com/saleonhealth/hms-api/blob/master/CHANGELOG.md#change-log) for detailed list of changes between releases.
 
 ## Documentation
 See also the [docs/]() directory for some additional internal documentation.
