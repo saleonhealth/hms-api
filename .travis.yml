@@ -23,8 +23,7 @@ before_script:
 #   - python manage.py migrate
 
 script:
-  - py.test
-  - pytest --cov
+  - coverage report -m
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
