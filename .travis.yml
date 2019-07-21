@@ -1,22 +1,30 @@
 language: python
 
 python:
-  - "3.7"
+  - "3.6"
 
 addons:
-  postgresql: "9.4"
+  postgresql: "9.5"
 
-before_script:
-  - psql -c 'create database hms;' -U postgres
-  # - python manage.py makemigrations
-  - python manage.py migrate
-
+env:
+  global:
+    - CC_TEST_REPORTER_ID=reporter_id
+    
 install:
   - pip install -r requirements.txt
   - pip install coverage
-  - pip install coveralls
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - psql -c 'create database hms;' -U postgres
+#   - python manage.py makemigrations
+#   - python manage.py migrate
+
 script:
   - py.test
+  - pytest --cov
 
-after_success:
-  - coveralls
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
