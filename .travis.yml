@@ -15,7 +15,7 @@ before_script:
 
 script:
   - psql -c 'create database hms;' -U postgres
-  - py.test --cov
+  - coveralls
   
 after_script:
   - coveralls
