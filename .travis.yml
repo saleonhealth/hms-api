@@ -21,8 +21,6 @@ before_script:
   - psql -c 'create database hms;' -U postgres
 #   - python manage.py makemigrations
 #   - python manage.py migrate
-
-script:
   - coverage report -m
 
 after_script:
