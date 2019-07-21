@@ -6,11 +6,8 @@ importlib-metadata==0.18
 more-itertools==7.2.0
 packaging==19.0
 pluggy==0.12.0
-psycopg2-binary==2.8.3
 py==1.8.0
 pyparsing==2.4.0
-pytest==5.0.1
-pytest-cov==2.7.1
 pytz==2019.1
 six==1.12.0
 sqlparse==0.3.0
