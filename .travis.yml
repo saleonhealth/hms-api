@@ -22,7 +22,7 @@ before_script:
 #   - python manage.py makemigrations
 #   - python manage.py migrate
 
-script
+script:
   - coverage report -m
 
 after_script:
