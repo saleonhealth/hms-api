@@ -12,15 +12,17 @@ env:
     
 install:
   - pip install -r requirements.txt
-  - pip install coverage
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
   - psql -c 'create database hms;' -U postgres
+  - coverage run python manage.py runserver
 #   - python manage.py makemigrations
 #   - python manage.py migrate
+
+script
   - coverage report -m
 
 after_script:
